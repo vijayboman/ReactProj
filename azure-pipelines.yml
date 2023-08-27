@@ -20,4 +20,4 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'npm start'
+    script: 'npm run build'
