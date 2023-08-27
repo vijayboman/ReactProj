@@ -10,6 +10,11 @@ pool:
  name: manish-self-pool
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: NodeTool@0
+  inputs:
+    versionSource: 'spec'
+    versionSpec: '16.x'
+- task: CmdLine@2
+  inputs:
+    script: 'npm start'
 
