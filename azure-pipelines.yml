@@ -16,5 +16,8 @@ steps:
     versionSpec: '16.x'
 - task: CmdLine@2
   inputs:
-    script: 'npm start'
+    script: 'npm install'
 
+- task: CmdLine@2
+  inputs:
+    script: 'npm start'
