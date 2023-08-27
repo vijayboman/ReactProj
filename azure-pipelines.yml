@@ -22,15 +22,15 @@ steps:
   inputs:
     script: 'npm run build'
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)/build'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+#- task: CopyFiles@2
+#  inputs:
+#    SourceFolder: '$(Build.SourcesDirectory)/build'
+#    Contents: '**'
+#    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/'
+    rootFolderOrFile: '$(Build.SourcesDirectory)/build'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
